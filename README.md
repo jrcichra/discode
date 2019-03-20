@@ -10,7 +10,7 @@ A Discord bot that compiles code in Discord!
 3. Pass it the environment variables it needs and run it with this command (replace my <>'s):
 
 ```bash
-docker run --name=<> --hostname=<> --restart=always -e DB_IP=demodude123.no-ip.org -e DB_USERNAME=<> -e DB_PASSWORD=<> -e DB_PORT=<> -e DISCORD_KEY=<> -d jrcichra/discode:master
+docker run --name=<> --hostname=<> --restart=always -e DB_IP=<> -e DB_USERNAME=<> -e DB_PASSWORD=<> -e DB_PORT=<> -e DISCORD_KEY=<> -d jrcichra/discode:master
 ```
 Don't laugh at me, some messages in discord will crash discode, but I have a wonderful little script to keep him alive...
 
