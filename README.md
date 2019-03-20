@@ -1,8 +1,8 @@
 # Discode
 A Discord bot that compiles code in Discord!
 
-# How to add discode to your server?
-Simple, visit his OAuth page
+# How to add Discode to your discord server?
+I've got a copy of him running on my linux box, you can borrow him :-)
 https://discordapp.com/api/oauth2/authorize?client_id=510482832628514837&permissions=0&scope=bot
 
 # How to run an actual instance of Discode
