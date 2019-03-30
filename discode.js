@@ -183,7 +183,8 @@ var burns = ["You're my favorite person besides every other person I've ever met
   "As an outsider, what do you think of the human race?",
   "Just because you have one doesn't mean you have to act like one.",
   "We can always tell when you are lying. Your lips move.",
-  "Are you always this stupid or is today a special occasion?"
+  "Are you always this stupid or is today a special occasion?",
+  "I think we all bring something to the table here, but from now on I think you need to bring silence"
 ];
 
 //Lets make some stuff from these imports
