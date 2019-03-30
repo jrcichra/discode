@@ -9,7 +9,9 @@ const {
 } = require('compile-run');
 const mariadb = require('mariadb/callback');
 const random = require('random');
-var burns = ["You're my favorite person besides every other person I've ever met.",
+var burns = [
+  "The number you requested is the same number of people who love you.",
+  "You're my favorite person besides every other person I've ever met.",
   "No offense, but you make me want to staple my cunt shut.",
   "Did your parents have any children that lived?",
   "I envy people who have never met you.",
@@ -194,7 +196,7 @@ const count = require('word-count')
 //var docker = new Docker();
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setActivity('with your emotions - (' + burns.length + ')', {
+  client.user.setActivity('with your emotions - (' + (burns.length -2) + ')', {
     type: 'PLAYING'
   });
 });
@@ -218,17 +220,20 @@ client.on('message', msg => {
     if (m != '' && parseInt(m) != 'NaN') {
       r = parseInt(m);
     } else {
-      r = random.int(min = 0, max = burns.length);
+      r = random.int(min = 1, max = burns.length);
     }
+    if (r >= 0 && r < burns.length){
+      var sleep = count(burns[r]) / 70 * 60 * 1000;
 
-    var sleep = count(burns[r]) / 70 * 60 * 1000;
-
-    console.log('sleeping for ' + sleep);
-    msg.channel.startTyping();
-    setTimeout(() => {
-      msg.reply("#" + r + ": " + burns[r]);
-      msg.channel.stopTyping();
-    }, sleep);
+      console.log('sleeping for ' + sleep);
+      msg.channel.startTyping();
+      setTimeout(() => {
+        msg.reply("#" + r + ": " + burns[r]);
+        msg.channel.stopTyping();
+      }, sleep);
+    }else{
+      msg.reply("Sorry, that is an invalid diss number.");
+    }
 
   } else if (msg.content.startsWith('```sql')) {
 
