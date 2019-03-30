@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:alpine
 ADD discode.js run.sh package.json /
 RUN npm install
 ENV DB_IP localhost
