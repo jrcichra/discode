@@ -196,7 +196,7 @@ const count = require('word-count')
 //var docker = new Docker();
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setActivity('with your emotions - (' + (burns.length -2) + ')', {
+  client.user.setActivity('with your emotions - (' + (burns.length -1) + ')', {
     type: 'PLAYING'
   });
 });
