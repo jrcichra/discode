@@ -1,5 +1,5 @@
 FROM node:alpine
-ADD discode.js run.sh package.json /
+ADD discode.js run.sh package.json package-lock.json /
 RUN npm install
 ENV DB_IP localhost
 ENV DB_USERNAME root
