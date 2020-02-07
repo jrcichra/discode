@@ -214,9 +214,9 @@ client.on('message', msg => {
     generalPromise(python.runSource(trimToCode(msg.content)), msg);
   } else if (msg.content.startsWith('```java')) {
     generalPromise(java.runSource(trimToCode(msg.content)), msg);
-  } else if (msg.content.includes('<@510482832628514837>')) {
+  } else if (msg.content.includes('<@!510482832628514837>')) {
     var r = -1;
-    var m = msg.content.replace('<@510482832628514837>', '');
+    var m = msg.content.replace('<@!510482832628514837>', '');
     if (m != '' && parseInt(m) != 'NaN') {
       r = parseInt(m);
     } else {
