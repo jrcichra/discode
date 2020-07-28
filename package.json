@@ -14,15 +14,15 @@
   "license": "ISC",
   "dependencies": {
     "ascii-table": "0.0.9",
-    "compile-run": "^2.1.4",
+    "compile-run": "^2.3.2",
     "discord": "^0.8.2",
-    "discord.js": "^11.4.2",
-    "dockerode": "^2.5.7",
+    "discord.js": "^12.2.0",
+    "dockerode": "^3.2.1",
     "fs": "0.0.1-security",
-    "mariadb": "^2.0.1-beta",
+    "mariadb": "^2.4.2",
     "node-docker-api": "^1.1.22",
-    "random": "^2.0.12",
-    "tar-fs": "^1.16.3",
+    "random": "^2.2.0",
+    "tar-fs": "^2.1.0",
     "word-count": "^0.2.2"
   },
   "bugs": {
