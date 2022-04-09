@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:17-alpine3.14
 RUN apk add python3 gcc g++ openjdk8-jre && rm -rf /var/cache/apk/*
 ADD discode.js run.sh package.json package-lock.json /
 RUN npm install
