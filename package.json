@@ -14,7 +14,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "discord": "^0.8.2",
     "discord.js": "^14.0.3",
     "random": "^3.0.6",
     "word-count": "^0.2.2"

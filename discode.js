@@ -1,7 +1,14 @@
 //Imports
-const Discord = require("discord.js");
+const { Client, GatewayIntentBits } = require("discord.js");
+const client = new Client({
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.MessageContent,
+    GatewayIntentBits.GuildMessageTyping,
+    GatewayIntentBits.GuildMessages,
+  ],
+});
 const random = require("random");
-const client = new Discord.Client();
 const count = require("word-count");
 
 const burns = [
@@ -192,10 +199,10 @@ client.on("ready", () => {
 
 client.on("error", console.error);
 
-client.on("message", (msg) => {
-  if (msg.content.includes("<@!510482832628514837>")) {
+client.on("messageCreate", (msg) => {
+  if (msg.content.includes("<@510482832628514837>")) {
     let r = -1;
-    const m = msg.content.replace("<@!510482832628514837>", "");
+    const m = msg.content.replace("<@510482832628514837>", "");
     if (m != "" && parseInt(m) != "NaN") {
       r = parseInt(m);
     } else {
@@ -204,10 +211,9 @@ client.on("message", (msg) => {
     if (r >= 0 && r < burns.length) {
       const sleep = (count(burns[r]) / 70) * 60 * 1000;
       console.log("sleeping for " + sleep);
-      msg.channel.startTyping();
+      msg.channel.sendTyping();
       setTimeout(() => {
         msg.reply("#" + r + ": " + burns[r]);
-        msg.channel.stopTyping();
       }, sleep);
     } else {
       msg.reply("Sorry, that is an invalid diss number.");

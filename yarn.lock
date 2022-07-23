@@ -526,13 +526,6 @@ depd@^1.1.2:
   resolved "https://registry.yarnpkg.com/depd/-/depd-1.1.2.tgz#9bcd52e14c097763e749b274c4346ed2e560b5a9"
   integrity sha512-7emPTl6Dpo6JRXOXjLRxck+FlLRX5847cLKEn00PLAgc3g2hTZZgr+e4c2v6QpSmLeFP3n5yUo7ft6avBK/5jQ==
 
-describe@>=0.8.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/describe/-/describe-1.2.0.tgz#3b42efa6dca1aa2445ef6d15c19854de583711c0"
-  integrity sha512-GcSTMsJD6d39QuE1Zor671dlY5pDY9IIVLHAidXLrTx6BmMQOyCKEX1btTI781+zA3GQYRcUITi+YoUjFB06UA==
-  dependencies:
-    string-color ">= 0.8.0"
-
 dir-glob@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/dir-glob/-/dir-glob-3.0.1.tgz#56dbf73d992a4a93ba1584f4534063fd2e41717f"
@@ -561,16 +554,6 @@ discord.js@^14.0.3:
     tslib "^2.4.0"
     undici "^5.8.0"
     ws "^8.8.1"
-
-discord@^0.8.2:
-  version "0.8.2"
-  resolved "https://registry.yarnpkg.com/discord/-/discord-0.8.2.tgz#8cb3ebf9f2e90594554d0c3734c99af87bb0b770"
-  integrity sha512-n8uOSuwvh+JLS3nrU/Jjom7TYX3jpAueTQ4NSQLf+SMsBZAjdzll4+zwYxxHxH7hvngmT12P0zP08dfHGh1xmQ==
-  dependencies:
-    describe ">=0.8.0"
-    glob ">3.0.1"
-    mootools ">=1.4.4"
-    string-color ">=0.8.0"
 
 dot-prop@^6.0.1:
   version "6.0.1"
@@ -740,17 +723,6 @@ glob-parent@^5.1.2:
   dependencies:
     is-glob "^4.0.1"
 
-glob@>3.0.1, glob@^8.0.1:
-  version "8.0.3"
-  resolved "https://registry.yarnpkg.com/glob/-/glob-8.0.3.tgz#415c6eb2deed9e502c68fa44a272e6da6eeca42e"
-  integrity sha512-ull455NHSHI/Y1FqGaaYFaLGkNMMJbavMrEGFXG/PGrg6y7sutWHUHrz6gy6WEBH6akM1M414dWKCNs+IhKdiQ==
-  dependencies:
-    fs.realpath "^1.0.0"
-    inflight "^1.0.4"
-    inherits "2"
-    minimatch "^5.0.1"
-    once "^1.3.0"
-
 glob@^7.1.3, glob@^7.1.4:
   version "7.2.3"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.2.3.tgz#b8df0fb802bbfa8e89bd1d938b4e16578ed44f2b"
@@ -762,6 +734,17 @@ glob@^7.1.3, glob@^7.1.4:
     minimatch "^3.1.1"
     once "^1.3.0"
     path-is-absolute "^1.0.0"
+
+glob@^8.0.1:
+  version "8.0.3"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-8.0.3.tgz#415c6eb2deed9e502c68fa44a272e6da6eeca42e"
+  integrity sha512-ull455NHSHI/Y1FqGaaYFaLGkNMMJbavMrEGFXG/PGrg6y7sutWHUHrz6gy6WEBH6akM1M414dWKCNs+IhKdiQ==
+  dependencies:
+    fs.realpath "^1.0.0"
+    inflight "^1.0.4"
+    inherits "2"
+    minimatch "^5.0.1"
+    once "^1.3.0"
 
 global-dirs@^3.0.0:
   version "3.0.0"
@@ -1256,11 +1239,6 @@ mkdirp@^1.0.3, mkdirp@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
-
-mootools@>=1.4.4:
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/mootools/-/mootools-1.5.2.tgz#1fddf1b4e0a9e65d20d483b9b4b08e1e87b1161a"
-  integrity sha512-S1cOCsakr8GJ3P1j66pXGgQfLtcRpFLcBkRcq0xXQ15T6IYtFWIQhqqqH8RR7eAa7/vFmKz90IIrzTnfrCHPFw==
 
 ms@2.1.2:
   version "2.1.2"
@@ -1828,11 +1806,6 @@ ssri@^9.0.0:
   integrity sha512-o57Wcn66jMQvfHG1FlYbWeZWW/dHZhJXjpIcTfXldXEk5nz5lStPo3mK0OJQfGR3RbZUlbISexbljkJzuEj/8Q==
   dependencies:
     minipass "^3.1.1"
-
-"string-color@>= 0.8.0", string-color@>=0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/string-color/-/string-color-0.8.0.tgz#1e674c8295ce29ddd9778b6e4cb3aa5e75448403"
-  integrity sha512-h1LLin9OfvTdEqmt1F+iUOnRuVloVy2kcaJ1LdJa1+DZxXrtKTfsq643HEG8i3uGOgrsiyaxAfiDudZN+FHcvg==
 
 "string-width@^1.0.2 || 2 || 3 || 4", string-width@^4.1.0, string-width@^4.2.3:
   version "4.2.3"
