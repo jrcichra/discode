@@ -192,8 +192,14 @@ const burns = [
 ];
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setActivity("with your emotions - (" + (burns.length - 1) + ")", {
-    type: "PLAYING",
+  client.user.setPresence({
+    status: "online",
+    activities: [
+      {
+        name: "with your emotions - (" + (burns.length - 1) + ")",
+        type: "PLAYING",
+      },
+    ],
   });
 });
 
