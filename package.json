@@ -4,22 +4,26 @@
   "description": "A Discord bot that compiles code in Discord!",
   "main": "discode.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "update": "ncu -u && yarn install"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jrcichra/Discode.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "discord": "^0.8.2",
-    "discord.js": "^13.6.0",
+    "discord.js": "^14.0.3",
     "random": "^3.0.6",
     "word-count": "^0.2.2"
   },
   "bugs": {
     "url": "https://github.com/jrcichra/Discode/issues"
   },
-  "homepage": "https://github.com/jrcichra/Discode#readme"
+  "homepage": "https://github.com/jrcichra/Discode#readme",
+  "devDependencies": {
+    "npm-check-updates": "^16.0.0"
+  }
 }
