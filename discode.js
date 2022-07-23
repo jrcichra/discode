@@ -1,15 +1,10 @@
 //Imports
-const Discord = require('discord.js');
-const {
-  c,
-  cpp,
-  node,
-  python,
-  java
-} = require('compile-run');
-const mariadb = require('mariadb/callback');
-const random = require('random');
-var burns = [
+const Discord = require("discord.js");
+const random = require("random");
+const client = new Discord.Client();
+const count = require("word-count");
+
+const burns = [
   "The number you requested is the same number of people who love you.",
   "You're my favorite person besides every other person I've ever met.",
   "No offense, but you make me want to staple my cunt shut.",
@@ -186,87 +181,39 @@ var burns = [
   "Just because you have one doesn't mean you have to act like one.",
   "We can always tell when you are lying. Your lips move.",
   "Are you always this stupid or is today a special occasion?",
-  "I think we all bring something to the table here, but from now on I think you need to bring silence"
+  "I think we all bring something to the table here, but from now on I think you need to bring silence",
 ];
-
-//Lets make some stuff from these imports
-const client = new Discord.Client();
-const count = require('word-count')
-//code._read = () => {};
-//var docker = new Docker();
-client.on('ready', () => {
+client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setActivity('with your emotions - (' + (burns.length -1) + ')', {
-    type: 'PLAYING'
+  client.user.setActivity("with your emotions - (" + (burns.length - 1) + ")", {
+    type: "PLAYING",
   });
 });
 
-client.on('error', console.error);
+client.on("error", console.error);
 
-client.on('message', msg => {
-  if (msg.content.startsWith('```c')) {
-    generalPromise(c.runSource(trimToCode(msg.content)), msg);
-  } else if (msg.content.startsWith('```cpp')) {
-    generalPromise(cpp.runSource(trimToCode(msg.content)), msg);
-  } else if (msg.content.startsWith('```node')) {
-    generalPromise(node.runSource(trimToCode(msg.content)), msg);
-  } else if (msg.content.startsWith('```python')) {
-    generalPromise(python.runSource(trimToCode(msg.content)), msg);
-  } else if (msg.content.startsWith('```java')) {
-    generalPromise(java.runSource(trimToCode(msg.content)), msg);
-  } else if (msg.content.includes('<@!510482832628514837>')) {
-    var r = -1;
-    var m = msg.content.replace('<@!510482832628514837>', '');
-    if (m != '' && parseInt(m) != 'NaN') {
+client.on("message", (msg) => {
+  if (msg.content.includes("<@!510482832628514837>")) {
+    let r = -1;
+    const m = msg.content.replace("<@!510482832628514837>", "");
+    if (m != "" && parseInt(m) != "NaN") {
       r = parseInt(m);
     } else {
-      r = random.int(min = 1, max = burns.length);
+      r = random.int((min = 1), (max = burns.length));
     }
-    if (r >= 0 && r < burns.length){
-      var sleep = count(burns[r]) / 70 * 60 * 1000;
-
-      console.log('sleeping for ' + sleep);
+    if (r >= 0 && r < burns.length) {
+      const sleep = (count(burns[r]) / 70) * 60 * 1000;
+      console.log("sleeping for " + sleep);
       msg.channel.startTyping();
       setTimeout(() => {
         msg.reply("#" + r + ": " + burns[r]);
         msg.channel.stopTyping();
       }, sleep);
-    }else{
+    } else {
       msg.reply("Sorry, that is an invalid diss number.");
     }
-
-  } else if (msg.content.startsWith('```sql')) {
-
-    const conn = mariadb.createConnection({
-      host: process.env.DB_IP,
-      user: process.env.DB_USERNAME,
-      password: process.env.DB_PASSWORD,
-      port: process.env.DB_PORT
-    });
-
-    var m = trimToCode(msg.content);
-    conn.query(m, (err, rows) => {
-
-      if (err) msg.reply("Error: " + JSON.stringify(err, null, 2));
-      else msg.reply("Result: " + JSON.stringify(rows, null, 2));
-      conn.end();
-    });
   }
   console.log(msg.content);
 });
-
-function generalPromise(p, msg) {
-  p.then(result => {
-      msg.reply("Here's what came through stderr:\n\n ``` " + result.stderr + " ```\n\nHere's the result of your compilation:\n\n ``` " + result.stdout + " ``` ");
-    })
-    .catch(err => {
-      msg.reply("Something went wrong:\n\n" + err);
-    });
-}
-
-function trimToCode(s) {
-  return (s.replace(/```/g, '').replace(/^.+\n/, ''));
-}
 //Main
-
 client.login(process.env.DISCORD_KEY);
