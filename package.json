@@ -22,7 +22,7 @@
     "mariadb": "^3.0.0",
     "node-docker-api": "^1.1.22",
     "random": "^3.0.6",
-    "tar-fs": "^2.1.1",
+    "tar-fs": "^2.1.2",
     "word-count": "^0.2.2"
   },
   "bugs": {
