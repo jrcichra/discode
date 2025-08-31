@@ -21,7 +21,7 @@
     "fs": "0.0.1-security",
     "mariadb": "^3.0.0",
     "node-docker-api": "^1.1.22",
-    "random": "^3.0.6",
+    "random": "^5.0.0",
     "tar-fs": "^3.0.0",
     "word-count": "^0.3.0"
   },
